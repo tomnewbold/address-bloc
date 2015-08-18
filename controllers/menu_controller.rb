@@ -98,6 +98,9 @@ class MenuController
     print "Entry number: "
     selection = gets.chomp.to_i
 
+    if selection <= #number of entries in the address book
+       puts #the return of their selection
+
   else
     puts "That's not a valid entry."
   end
