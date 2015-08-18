@@ -15,6 +15,8 @@ class MenuController
     puts "3 - Search for an entry"
     puts "4 - Important entries from a CSV"
     puts "5 - Exit"
+    puts "6 - View Entry Number n"
+
     print "Enter your selection: "
 
     selection = gets.to_i
@@ -45,6 +47,11 @@ class MenuController
       puts "Good-bye!"
 
       exit(0)
+
+    when 6
+      system "clear"
+      view_entry_n
+      main_menu
 
     else
       system "clear"
@@ -83,6 +90,16 @@ class MenuController
     system "clear"
     puts "New entry created"
   
+  end
+
+   def view_entry_n
+    system "clear"
+    puts "What entry do you want to see?"
+    print "Entry number: "
+    selection = gets.chomp.to_i
+
+  else
+    puts "That's not a valid entry."
   end
 
   def search_entries
