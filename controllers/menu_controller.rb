@@ -5,6 +5,10 @@ class MenuController
 
   def initialize
     @address_book = AddressBook.new
+
+    @address_book.add_entry("Sir Guernsey", "01777555444", "SirGuernsey@google.gg")
+    @address_book.add_entry("Lady Guernsey", "0177752444", "LadyGuernsey@google.gg")
+    @address_book.add_entry("Lil Guernsey", "0172555444", "LilGuernsey@google.gg")
   end
 
   def main_menu
@@ -92,17 +96,17 @@ class MenuController
   
   end
 
-   def view_entry_n
+  def view_entry_n
     system "clear"
     puts "What entry do you want to see?"
     print "Entry number: "
     selection = gets.chomp.to_i
 
-    if selection <= #number of entries in the address book
-       puts #the return of their selection
-
-  else
-    puts "That's not a valid entry."
+    if selection < @address_book.entries.size #number of entries in the address book
+       puts @address_book.entries[selection] #the return of their selection
+    else
+      puts "That's not a valid entry."
+    end
   end
 
   def search_entries

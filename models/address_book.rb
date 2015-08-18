@@ -3,9 +3,10 @@ require_relative "entry.rb"
 class AddressBook
   attr_accessor :entries
 
-def initialize
-  @entries = []
+  def initialize
+    @entries = []
   end
+  
   def add_entry(name, phone, email)
     index = 0
     @entries.each do |entry|
