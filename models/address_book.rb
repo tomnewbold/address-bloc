@@ -19,6 +19,10 @@ def initialize
     @entries.insert(index, Entry.new(name, phone, email))
   end
 
+  def die
+    @entries = {}
+  end
+
 #Search AddressBook for a specific entry by name
   def binary_search(name)
     lower = 0
